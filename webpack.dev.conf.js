@@ -9,7 +9,8 @@ module.exports = merge(baseWebpackConfig, {
     mode: 'development',
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'js-core'
+            title: 'js-core',
+            template: 'index.html'
         }),
         new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
         new webpack.NamedModulesPlugin(),

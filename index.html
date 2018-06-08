@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-core</title>
+</head>
+<body>
+    <div id="mvvm-app">
+        <input type="text" on:input="wordInput" v-model="word">
+        <p>{{word}}</p>
+        <button on:click="sayHi">修改model</button>
+    </div>
+</body>
+</html>
