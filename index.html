@@ -6,8 +6,10 @@
 </head>
 <body>
     <div id="mvvm-app">
-        <input type="text" on:input="wordInput" v-model="word">
-        <p>{{word}}</p>
+        <input type="text" on:input="nameInput">
+        <p>{{name}}</p>
+        <input type="text" on:input="wordInput">
+        <p>{{age}}</p>
         <button on:click="sayHi">修改model</button>
     </div>
 </body>

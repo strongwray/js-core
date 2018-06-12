@@ -1,28 +1,20 @@
-import { Compile } from './mvvm/compile';
-import { Observer } from './mvvm/observer';
+import { Tank } from './mvvm/tank';
 
-const demo = { 
-    name: 'wulei',
-    age: 333,
-    job: ['it', 'player'],
-    area: {
-        province: 'sichuan',
-        city: 'chengdu'
-    }
-};
-new Observer(demo);
-
-new Compile({
+new Tank({
     el: '#mvvm-app',
     data: {
-        word: 'wulei'
+        age: 27,
+        name: 'wulei'
     },
     methods: {
-        wordInput(e: any) {
-            console.log(e.target.value);
+        nameInput: function (e: any) {
+            this.name = e.target.value;
         },
-        sayHi() {
-            console.log('hello world');
+        wordInput: function(e: any) {
+            this.age = e.target.value;
+        },
+        sayHi: function(e: any) {
+            console.log(this.data);
         }
     }
 });
