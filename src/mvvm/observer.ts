@@ -4,12 +4,11 @@ export class Observer {
     constructor(data: any) {
         this.defineReactive(data);
     }
-
     defineReactive(observerObj: any) {
         const dep = new Dep(); // 创建监听列表
         const observerArr = Object.keys(observerObj);
         if (observerArr.length === 0)  return;
-        Object.keys(observerObj).forEach((key) => {
+        observerArr.forEach((key) => {
             let val = observerObj[key];
             let childObj = observe(val);
             Object.defineProperty(observerObj, key, {
@@ -43,12 +42,15 @@ function observe(value: any) {
     }
     return new Observer(value);
 }
+
 export class Dep {
-    public static id = 0;
-    public static target: any;
+    public static uid = 0;
+    public static target: Watcher;
+    id = 0;
     subs: Watcher[] = [];
     constructor() {
-        Dep.id = Dep.id++;
+        Dep.uid += 1;
+        this.id = Dep.uid;
     }
     addSub(sub: Watcher) {
         this.subs.push(sub);

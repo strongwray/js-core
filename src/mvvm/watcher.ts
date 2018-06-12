@@ -13,9 +13,9 @@ export class Watcher {
         this.oldValue = this.get();
     }
     addDep(dep: Dep) {
-        if (!this.depIds.hasOwnProperty(Dep.id)) {
+        if (!this.depIds.hasOwnProperty(dep.id)) {
             dep.addSub(this);
-            this.depIds[Dep.id] = dep;
+            this.depIds[dep.id] = dep;
         }
      }
     get() {
