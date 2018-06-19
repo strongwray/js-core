@@ -17,5 +17,6 @@
         "experimentalDecorators": true,
         "suppressImplicitAnyIndexErrors": true,
         "allowJs": true
-    }
+    },
+    "noImplicitAny": true
 }
